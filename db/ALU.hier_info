@@ -1,0 +1,36 @@
+|ALU
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+OUT[0] <= SHIFT_LEFT_LOGIC:sll.port2
+OUT[1] <= SHIFT_LEFT_LOGIC:sll.port2
+OUT[2] <= SHIFT_LEFT_LOGIC:sll.port2
+OUT[3] <= SHIFT_LEFT_LOGIC:sll.port2
+OUT[4] <= SHIFT_LEFT_LOGIC:sll.port2
+
+
+|ALU|SHIFT_LEFT_LOGIC:sll
+A[0] => OUT[1].DATAIN
+A[1] => OUT[2].DATAIN
+A[2] => OUT[3].DATAIN
+A[3] => OUT[4].DATAIN
+A[4] => ~NO_FANOUT~
+B[0] => ~NO_FANOUT~
+B[1] => ~NO_FANOUT~
+B[2] => ~NO_FANOUT~
+B[3] => ~NO_FANOUT~
+B[4] => ~NO_FANOUT~
+OUT[0] <= <GND>
+OUT[1] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= A[1].DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= A[2].DB_MAX_OUTPUT_PORT_TYPE
+OUT[4] <= A[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,97 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\intelFPGA_lite\18.1\ALU\simulation\modelsim
+vALU
+Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+Id?GQef7LlYZf;eLJk[RI@3
+Vndfoo_YcJgR_Bl0mO[dE90
+S1
+Z2 dC:\intelFPGA_lite\18.1\ALU\simulation\modelsim
+w1567651496
+8C:/intelFPGA_lite/18.1/ALU/ALU.sv
+FC:/intelFPGA_lite/18.1/ALU/ALU.sv
+L0 1
+Z3 OV;L;10.1b;51
+r1
+31
+Z4 o-work work -O0
+n@a@l@u
+!i10b 1
+!s100 zb`270=6:LUCBHFzi8DBJ0
+!s105 ALU_sv_unit
+!s85 0
+!s108 1567875950.879000
+!s107 C:/intelFPGA_lite/18.1/ALU/ALU.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/ALU.sv|
+!s101 -O0
+vSHIFT_LEFT_LOGIC
+R1
+I4XWgUSV>Vn:2HBdWVlEdU1
+V]KF1bgmdBiG=jA19:BA]I2
+S1
+R2
+w1567651491
+8C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv
+FC:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv
+L0 1
+R3
+r1
+31
+R4
+n@s@h@i@f@t_@l@e@f@t_@l@o@g@i@c
+!i10b 1
+!s100 zmn<TojZIdW1C@AOdk=o=3
+!s105 SHIFT_LEFT_LOGIC_sv_unit
+!s85 0
+!s108 1567875950.991000
+!s107 C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv|
+!s101 -O0
+vtestbench_ALU
+R1
+IkdlB^=iE;:?WF6eIXBNCX1
+Vb21@N4UbHzoX9N:NV8]^Z1
+S1
+R2
+w1567651616
+8C:/intelFPGA_lite/18.1/ALU/testbench_ALU.sv
+FC:/intelFPGA_lite/18.1/ALU/testbench_ALU.sv
+L0 1
+R3
+r1
+31
+R4
+ntestbench_@a@l@u
+!i10b 1
+!s100 P^a8f]7@=I<n__^:`2oMY1
+!s105 testbench_ALU_sv_unit
+!s85 0
+!s108 1567875951.112000
+!s107 C:/intelFPGA_lite/18.1/ALU/testbench_ALU.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/testbench_ALU.sv|
+!s101 -O0
+vtestbench_SHIFT_LEFT_LOGIC
+R1
+!i10b 1
+!s100 4HB=m^gI=^_`fX4PjUKAR0
+ITh4[HdP;<dM^9KjE;6ned2
+VWT8lIKD635CB2OSW_Hb8A2
+!s105 testbench_SHIFT_LEFT_LOGIC_sv_unit
+S1
+R2
+w1567651183
+8C:/intelFPGA_lite/18.1/ALU/testbench_SHIFT_LEFT_LOGIC.sv
+FC:/intelFPGA_lite/18.1/ALU/testbench_SHIFT_LEFT_LOGIC.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1567875951.235000
+!s107 C:/intelFPGA_lite/18.1/ALU/testbench_SHIFT_LEFT_LOGIC.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/testbench_SHIFT_LEFT_LOGIC.sv|
+!s101 -O0
+R4
+ntestbench_@s@h@i@f@t_@l@e@f@t_@l@o@g@i@c

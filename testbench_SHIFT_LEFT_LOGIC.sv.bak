@@ -1,0 +1,15 @@
+module testbench_SHIFT_LEFT_LOGIC();
+	logic [4:0] IN;
+	wire [4:0] OUT;
+	
+	SHIFT_LEFT_LOGIC SHIFT_LEFT_LOGIC_test(IN, OUT);
+
+
+	initial
+		begin	
+		#10 assign IN = 4'b0101; 
+		#10 assign IN = 4'b1011;
+	end
+
+
+endmodule: testbench_SHIFT_LEFT_LOGIC

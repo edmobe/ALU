@@ -1,0 +1,57 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do ALU_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\intelFPGA_lite\18.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\intelFPGA_lite\18.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+C:/intelFPGA_lite/18.1/ALU {C:/intelFPGA_lite/18.1/ALU/ALU.sv}
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# vlog -sv -work work +incdir+C:/intelFPGA_lite/18.1/ALU {C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv}
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module SHIFT_LEFT_LOGIC
+# 
+# Top level modules:
+# 	SHIFT_LEFT_LOGIC
+# 
+vsim work.SHIFT_LEFT_LOGIC
+# vsim work.SHIFT_LEFT_LOGIC 
+# Loading sv_std.std
+# Loading work.SHIFT_LEFT_LOGIC
+add wave -position end  sim:/SHIFT_LEFT_LOGIC/A
+add wave -position end  sim:/SHIFT_LEFT_LOGIC/B
+add wave -position end  sim:/SHIFT_LEFT_LOGIC/OUT
+run
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/ALU.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module SHIFT_LEFT_LOGIC
+# 
+# Top level modules:
+# 	SHIFT_LEFT_LOGIC
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/testbench_ALU.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module testbench_ALU
+# 
+# Top level modules:
+# 	testbench_ALU
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/testbench_SHIFT_LEFT_LOGIC.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module testbench_SHIFT_LEFT_LOGIC
+# 
+# Top level modules:
+# 	testbench_SHIFT_LEFT_LOGIC
