@@ -1,0 +1,19 @@
+module testebench_OR();
+	logic [3:0] A;
+	logic [3:0] B;
+	wire [3:0] OUT;
+
+	OR_GATE OR_test(A, B, OUT);
+
+
+	initial
+		begin	
+		
+		#50 assign A = 4'b1010; B = 4'b1010;
+		
+		#50 assign A = 4'b1111; B = 4'b0000;
+		
+	end
+
+
+endmodule: testebench_OR

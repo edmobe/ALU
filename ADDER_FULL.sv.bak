@@ -1,0 +1,30 @@
+module ADDER_FULL #(parameter Nbit=1)
+	(input [Nbit-1:0] A,
+	 input [Nbit-1:0] B;
+	 input CIN;
+	 output [Nbit-1:0] SUM;
+	 output COUT);
+	 
+	 logic [Nbit-1:0] CHALF;
+	 
+	genvar i;
+		generate
+			for (i=0; i< Nbit; i++)
+				begin: generate_full_adder
+				 
+					if (i==0)
+					
+					begin
+						half_adder f ( A[i],B[i],Carry_IN,Sum[i],carry_interno[i]);
+					end
+					else
+					
+					begin
+						half_adder f ( A[i],B[i],carry_interno[i-1],Sum[i],carry_interno[i]);
+					end		
+		end
+		assign Carry_OUT = carry_interno[Nbit-1];
+		
+	endgenerate	
+ 
+endmodule: full_adder

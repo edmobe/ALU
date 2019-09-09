@@ -3,36 +3,243 @@ K3
 13
 cModel Technology
 Z0 dC:\intelFPGA_lite\18.1\ALU\simulation\modelsim
-vALU
+vADDER_FULL
 Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
-Id?GQef7LlYZf;eLJk[RI@3
-Vndfoo_YcJgR_Bl0mO[dE90
+ITnY?O7CzcnCjzLH;lcihL1
+VV8U6k2UA4]AZc6RO377CL0
 S1
 Z2 dC:\intelFPGA_lite\18.1\ALU\simulation\modelsim
-w1567651496
-8C:/intelFPGA_lite/18.1/ALU/ALU.sv
-FC:/intelFPGA_lite/18.1/ALU/ALU.sv
+w1568007015
+8C:/intelFPGA_lite/18.1/ALU/ADDER_FULL.sv
+FC:/intelFPGA_lite/18.1/ALU/ADDER_FULL.sv
 L0 1
 Z3 OV;L;10.1b;51
 r1
 31
 Z4 o-work work -O0
+n@a@d@d@e@r_@f@u@l@l
+!i10b 1
+!s100 P57l^aM_23YZ;B1Mm]DIo0
+!s105 ADDER_FULL_sv_unit
+!s85 0
+!s108 1568014825.519000
+!s107 C:/intelFPGA_lite/18.1/ALU/ADDER_FULL.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/ADDER_FULL.sv|
+!s101 -O0
+vADDER_HALF
+R1
+IaZQPhNgFDYaAnK@9Y]LGf0
+VJe`?NbAV4@>UG0f[[S?AX2
+S1
+R2
+w1567990225
+8C:/intelFPGA_lite/18.1/ALU/ADDER_HALF.sv
+FC:/intelFPGA_lite/18.1/ALU/ADDER_HALF.sv
+L0 1
+R3
+r1
+31
+R4
+n@a@d@d@e@r_@h@a@l@f
+!i10b 1
+!s100 =eDZ5j;YO3aeoGMh_bA8N0
+!s105 ADDER_HALF_sv_unit
+!s85 0
+!s108 1568014825.627000
+!s107 C:/intelFPGA_lite/18.1/ALU/ADDER_HALF.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/ADDER_HALF.sv|
+!s101 -O0
+vALU
+R1
+Id?GQef7LlYZf;eLJk[RI@3
+Vndfoo_YcJgR_Bl0mO[dE90
+S1
+R2
+w1567651496
+8C:/intelFPGA_lite/18.1/ALU/ALU.sv
+FC:/intelFPGA_lite/18.1/ALU/ALU.sv
+L0 1
+R3
+r1
+31
+R4
 n@a@l@u
 !i10b 1
 !s100 zb`270=6:LUCBHFzi8DBJ0
 !s105 ALU_sv_unit
 !s85 0
-!s108 1567875950.879000
+!s108 1568014825.707000
 !s107 C:/intelFPGA_lite/18.1/ALU/ALU.sv|
 !s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/ALU.sv|
 !s101 -O0
+vFLIP_FLOP_D
+R1
+I9]AETNdj305UgfQ;_XWh[3
+V7e;<Y^g5Zl:B5_cb6d@jz3
+S1
+R2
+w1567990106
+8C:/intelFPGA_lite/18.1/ALU/FLIP_FLOP_D.sv
+FC:/intelFPGA_lite/18.1/ALU/FLIP_FLOP_D.sv
+L0 1
+R3
+r1
+31
+R4
+n@f@l@i@p_@f@l@o@p_@d
+!i10b 1
+!s100 M3?=@2FRSD8OiXk=See[:2
+!s105 FLIP_FLOP_D_sv_unit
+!s85 0
+!s108 1568014825.787000
+!s107 C:/intelFPGA_lite/18.1/ALU/FLIP_FLOP_D.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/FLIP_FLOP_D.sv|
+!s101 -O0
+vGATE_AND
+R1
+IFih<nHf<en`MAU:>7YWR^3
+VIS23n4UJU;f>;RQWfd[Qk0
+S1
+R2
+w1567891124
+8C:/intelFPGA_lite/18.1/ALU/GATE_AND.sv
+FC:/intelFPGA_lite/18.1/ALU/GATE_AND.sv
+L0 1
+R3
+r1
+31
+R4
+n@g@a@t@e_@a@n@d
+!i10b 1
+!s100 DZemKT[RlI:cW7_GnOP]V2
+!s105 GATE_AND_sv_unit
+!s85 0
+!s108 1568014825.866000
+!s107 C:/intelFPGA_lite/18.1/ALU/GATE_AND.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/GATE_AND.sv|
+!s101 -O0
+vGATE_NAND
+R1
+ImYF=eI6iNWm?`_5mUZEQ]0
+VDlhjP:=2?^EblnU?2F5bR2
+S1
+R2
+w1567975630
+8C:/intelFPGA_lite/18.1/ALU/GATE_NAND.sv
+FC:/intelFPGA_lite/18.1/ALU/GATE_NAND.sv
+L0 1
+R3
+r1
+31
+R4
+n@g@a@t@e_@n@a@n@d
+!i10b 1
+!s100 BbPzd^P>ShB6@A6XnG04N0
+!s105 GATE_NAND_sv_unit
+!s85 0
+!s108 1568014825.942000
+!s107 C:/intelFPGA_lite/18.1/ALU/GATE_NAND.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/GATE_NAND.sv|
+!s101 -O0
+vGATE_NOT
+R1
+I;_DCz8Z?PfNH8GTVnYVUh2
+V69T]IY8Td_CV4>US5>BfQ1
+S1
+R2
+w1567891137
+8C:/intelFPGA_lite/18.1/ALU/GATE_NOT.sv
+FC:/intelFPGA_lite/18.1/ALU/GATE_NOT.sv
+L0 1
+R3
+r1
+31
+R4
+n@g@a@t@e_@n@o@t
+!i10b 1
+!s100 @C?[W1[19i3lhSA[oJ6E@1
+!s105 GATE_NOT_sv_unit
+!s85 0
+!s108 1568014826.019000
+!s107 C:/intelFPGA_lite/18.1/ALU/GATE_NOT.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/GATE_NOT.sv|
+!s101 -O0
+vGATE_OR
+R1
+IS_79zD>9H_^iMN5G4_HP;3
+Vo<g0`g[IINYBX0F3D47`n3
+S1
+R2
+w1567891131
+8C:/intelFPGA_lite/18.1/ALU/GATE_OR.sv
+FC:/intelFPGA_lite/18.1/ALU/GATE_OR.sv
+L0 1
+R3
+r1
+31
+R4
+n@g@a@t@e_@o@r
+!i10b 1
+!s100 d207^@>I1W`Ah1VQ4Ib?=0
+!s105 GATE_OR_sv_unit
+!s85 0
+!s108 1568014826.102000
+!s107 C:/intelFPGA_lite/18.1/ALU/GATE_OR.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/GATE_OR.sv|
+!s101 -O0
+vGATE_XOR
+R1
+I]5lM:1kNQTkLFVN`?;[zh3
+V>Jk>[FP[^NNUzJd4Fb68W0
+S1
+R2
+w1567891661
+8C:/intelFPGA_lite/18.1/ALU/GATE_XOR.sv
+FC:/intelFPGA_lite/18.1/ALU/GATE_XOR.sv
+L0 1
+R3
+r1
+31
+R4
+n@g@a@t@e_@x@o@r
+!i10b 1
+!s100 zXPoKfjz<AEcL`Fj9FSUJ2
+!s105 GATE_XOR_sv_unit
+!s85 0
+!s108 1568014826.179000
+!s107 C:/intelFPGA_lite/18.1/ALU/GATE_XOR.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/GATE_XOR.sv|
+!s101 -O0
+vMUX
+R1
+IM2aHJnS9N1eGNXY8W<ke51
+VZM2XYU;1akb2e<:MR=Ok82
+S1
+R2
+w1567998071
+8C:/intelFPGA_lite/18.1/ALU/MUX.sv
+FC:/intelFPGA_lite/18.1/ALU/MUX.sv
+L0 1
+R3
+r1
+31
+R4
+n@m@u@x
+!i10b 1
+!s100 []_RkVHHnQSGm]e6nR_3=2
+!s105 MUX_sv_unit
+!s85 0
+!s108 1568014826.259000
+!s107 C:/intelFPGA_lite/18.1/ALU/MUX.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/MUX.sv|
+!s101 -O0
 vSHIFT_LEFT_LOGIC
 R1
-I4XWgUSV>Vn:2HBdWVlEdU1
+IVWN=jbIKRz`Ri>ebCQi]M3
 V]KF1bgmdBiG=jA19:BA]I2
 S1
 R2
-w1567651491
+w1568014563
 8C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv
 FC:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv
 L0 1
@@ -42,46 +249,69 @@ r1
 R4
 n@s@h@i@f@t_@l@e@f@t_@l@o@g@i@c
 !i10b 1
-!s100 zmn<TojZIdW1C@AOdk=o=3
+!s100 ;1_KFYDDGE>=N26E:Ad<o1
 !s105 SHIFT_LEFT_LOGIC_sv_unit
 !s85 0
-!s108 1567875950.991000
+!s108 1568014826.338000
 !s107 C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv|
 !s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv|
 !s101 -O0
-vtestbench_ALU
+vSHIFT_RIGHT_LOGIC
 R1
-IkdlB^=iE;:?WF6eIXBNCX1
-Vb21@N4UbHzoX9N:NV8]^Z1
+IF:WG@PKP?;d0a[=mf@D[T0
+V6dI``>>3VZP[HAclc9JoF3
 S1
 R2
-w1567651616
-8C:/intelFPGA_lite/18.1/ALU/testbench_ALU.sv
-FC:/intelFPGA_lite/18.1/ALU/testbench_ALU.sv
+w1568012982
+8C:/intelFPGA_lite/18.1/ALU/SHIFT_RIGHT_LOGIC.sv
+FC:/intelFPGA_lite/18.1/ALU/SHIFT_RIGHT_LOGIC.sv
 L0 1
 R3
 r1
 31
 R4
-ntestbench_@a@l@u
+n@s@h@i@f@t_@r@i@g@h@t_@l@o@g@i@c
 !i10b 1
-!s100 P^a8f]7@=I<n__^:`2oMY1
-!s105 testbench_ALU_sv_unit
+!s100 lPQIcfT]1lHB5c@o];me^1
+!s105 SHIFT_RIGHT_LOGIC_sv_unit
 !s85 0
-!s108 1567875951.112000
-!s107 C:/intelFPGA_lite/18.1/ALU/testbench_ALU.sv|
-!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/testbench_ALU.sv|
+!s108 1568014826.415000
+!s107 C:/intelFPGA_lite/18.1/ALU/SHIFT_RIGHT_LOGIC.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/SHIFT_RIGHT_LOGIC.sv|
+!s101 -O0
+vSUBTRACTOR
+R1
+I;eE;6UI]ZUVFnlMBC7A3c1
+V^00f[:b4GJR4BNF8=jn5=2
+S1
+R2
+w1567902065
+8C:/intelFPGA_lite/18.1/ALU/SUBTRACTOR.sv
+FC:/intelFPGA_lite/18.1/ALU/SUBTRACTOR.sv
+L0 1
+R3
+r1
+31
+R4
+n@s@u@b@t@r@a@c@t@o@r
+!i10b 1
+!s100 iYTaR2gAl39]=dkJ>OGcg3
+!s105 SUBTRACTOR_sv_unit
+!s85 0
+!s108 1568014826.492000
+!s107 C:/intelFPGA_lite/18.1/ALU/SUBTRACTOR.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/SUBTRACTOR.sv|
 !s101 -O0
 vtestbench_SHIFT_LEFT_LOGIC
 R1
 !i10b 1
-!s100 4HB=m^gI=^_`fX4PjUKAR0
-ITh4[HdP;<dM^9KjE;6ned2
+!s100 =3mNf1:OCzk:0aXgX?[P00
+II>6o1Lc2W7QU_AHn:Z2ea2
 VWT8lIKD635CB2OSW_Hb8A2
 !s105 testbench_SHIFT_LEFT_LOGIC_sv_unit
 S1
 R2
-w1567651183
+w1568013303
 8C:/intelFPGA_lite/18.1/ALU/testbench_SHIFT_LEFT_LOGIC.sv
 FC:/intelFPGA_lite/18.1/ALU/testbench_SHIFT_LEFT_LOGIC.sv
 L0 1
@@ -89,7 +319,7 @@ R3
 r1
 !s85 0
 31
-!s108 1567875951.235000
+!s108 1568014826.570000
 !s107 C:/intelFPGA_lite/18.1/ALU/testbench_SHIFT_LEFT_LOGIC.sv|
 !s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/ALU/testbench_SHIFT_LEFT_LOGIC.sv|
 !s101 -O0

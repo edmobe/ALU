@@ -10,6 +10,24 @@
 # ** Warning: Copied C:\intelFPGA_lite\18.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
+# vlog -sv -work work +incdir+C:/intelFPGA_lite/18.1/ALU {C:/intelFPGA_lite/18.1/ALU/GATE_OR.sv}
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module GATE_OR
+# 
+# Top level modules:
+# 	GATE_OR
+# vlog -sv -work work +incdir+C:/intelFPGA_lite/18.1/ALU {C:/intelFPGA_lite/18.1/ALU/GATE_NOT.sv}
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module GATE_NOT
+# 
+# Top level modules:
+# 	GATE_NOT
+# vlog -sv -work work +incdir+C:/intelFPGA_lite/18.1/ALU {C:/intelFPGA_lite/18.1/ALU/GATE_AND.sv}
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module GATE_AND
+# 
+# Top level modules:
+# 	GATE_AND
 # vlog -sv -work work +incdir+C:/intelFPGA_lite/18.1/ALU {C:/intelFPGA_lite/18.1/ALU/ALU.sv}
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 # -- Compiling module ALU
@@ -22,36 +40,261 @@
 # 
 # Top level modules:
 # 	SHIFT_LEFT_LOGIC
+# vlog -sv -work work +incdir+C:/intelFPGA_lite/18.1/ALU {C:/intelFPGA_lite/18.1/ALU/MUX.sv}
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module MUX
 # 
-vsim work.SHIFT_LEFT_LOGIC
-# vsim work.SHIFT_LEFT_LOGIC 
-# Loading sv_std.std
-# Loading work.SHIFT_LEFT_LOGIC
-add wave -position end  sim:/SHIFT_LEFT_LOGIC/A
-add wave -position end  sim:/SHIFT_LEFT_LOGIC/B
-add wave -position end  sim:/SHIFT_LEFT_LOGIC/OUT
-run
+# Top level modules:
+# 	MUX
+# 
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/ADDER_FULL.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module ADDER_FULL
+# 
+# Top level modules:
+# 	ADDER_FULL
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/ADDER_HALF.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module ADDER_HALF
+# 
+# Top level modules:
+# 	ADDER_HALF
 vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/ALU.sv
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 # -- Compiling module ALU
 # 
 # Top level modules:
 # 	ALU
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/FLIP_FLOP_D.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module FLIP_FLOP_D
+# 
+# Top level modules:
+# 	FLIP_FLOP_D
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/GATE_AND.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module GATE_AND
+# 
+# Top level modules:
+# 	GATE_AND
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/GATE_NAND.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module GATE_NAND
+# 
+# Top level modules:
+# 	GATE_NAND
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/GATE_NOT.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module GATE_NOT
+# 
+# Top level modules:
+# 	GATE_NOT
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/GATE_OR.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module GATE_OR
+# 
+# Top level modules:
+# 	GATE_OR
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/GATE_XOR.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module GATE_XOR
+# 
+# Top level modules:
+# 	GATE_XOR
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/MUX.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module MUX
+# 
+# Top level modules:
+# 	MUX
 vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 # -- Compiling module SHIFT_LEFT_LOGIC
 # 
 # Top level modules:
 # 	SHIFT_LEFT_LOGIC
-vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/testbench_ALU.sv
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/SHIFT_RIGHT_LOGIC.sv
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
-# -- Compiling module testbench_ALU
+# -- Compiling module SHIFT_RIGHT_LOGIC
 # 
 # Top level modules:
-# 	testbench_ALU
+# 	SHIFT_RIGHT_LOGIC
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/SUBTRACTOR.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module SUBTRACTOR
+# 
+# Top level modules:
+# 	SUBTRACTOR
 vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/testbench_SHIFT_LEFT_LOGIC.sv
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 # -- Compiling module testbench_SHIFT_LEFT_LOGIC
 # 
 # Top level modules:
 # 	testbench_SHIFT_LEFT_LOGIC
+vsim work.SUBTRACTOR
+# vsim work.SUBTRACTOR 
+# Loading sv_std.std
+# Loading work.SUBTRACTOR
+# Loading work.GATE_NOT
+# Loading work.ADDER_FULL
+# Loading work.ADDER_HALF
+# Loading work.GATE_XOR
+# Loading work.GATE_AND
+# Loading work.GATE_OR
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SUBTRACTOR.sv(10): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'C_IN'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/ADDER_FULL.sv(4).
+# 
+#         Region: /SUBTRACTOR/SUBTRACTION
+vsim work.testbench_SHIFT_LEFT_LOGIC
+# vsim work.testbench_SHIFT_LEFT_LOGIC 
+# Loading sv_std.std
+# Loading work.testbench_SHIFT_LEFT_LOGIC
+# Loading work.SHIFT_LEFT_LOGIC
+# Loading work.MUX
+# Loading work.GATE_NOT
+# Loading work.GATE_AND
+# Loading work.GATE_OR
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[7]/generate_muxes_srl[7]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[7]/generate_muxes_srl[6]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[7]/generate_muxes_srl[5]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[7]/generate_muxes_srl[4]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[7]/generate_muxes_srl[3]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[7]/generate_muxes_srl[2]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[7]/generate_muxes_srl[1]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[7]/generate_muxes_srl[0]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[6]/generate_muxes_srl[7]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[6]/generate_muxes_srl[6]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[6]/generate_muxes_srl[5]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[6]/generate_muxes_srl[4]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[6]/generate_muxes_srl[3]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[6]/generate_muxes_srl[2]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[6]/generate_muxes_srl[1]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[6]/generate_muxes_srl[0]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[5]/generate_muxes_srl[7]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[5]/generate_muxes_srl[6]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[5]/generate_muxes_srl[5]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[5]/generate_muxes_srl[4]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[5]/generate_muxes_srl[3]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[5]/generate_muxes_srl[2]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[5]/generate_muxes_srl[1]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[5]/generate_muxes_srl[0]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[4]/generate_muxes_srl[7]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[4]/generate_muxes_srl[6]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[4]/generate_muxes_srl[5]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[4]/generate_muxes_srl[4]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[4]/generate_muxes_srl[3]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[4]/generate_muxes_srl[2]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[4]/generate_muxes_srl[1]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[4]/generate_muxes_srl[0]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[3]/generate_muxes_srl[7]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[3]/generate_muxes_srl[6]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[3]/generate_muxes_srl[5]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[3]/generate_muxes_srl[4]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[3]/generate_muxes_srl[3]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[3]/generate_muxes_srl[2]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[3]/generate_muxes_srl[1]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[3]/generate_muxes_srl[0]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[2]/generate_muxes_srl[3]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[2]/generate_muxes_srl[2]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[2]/generate_muxes_srl[1]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[2]/generate_muxes_srl[0]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[1]/generate_muxes_srl[1]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[1]/generate_muxes_srl[0]/genblk1/f
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT_LOGIC.sv(16): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
+# 
+#         Region: /testbench_SHIFT_LEFT_LOGIC/SHIFT_LEFT_LOGIC_test/generate_shift_right_logic[0]/generate_muxes_srl[0]/genblk1/f
+add wave -position end  sim:/testbench_SHIFT_LEFT_LOGIC/A
+add wave -position end  sim:/testbench_SHIFT_LEFT_LOGIC/B
+add wave -position end  sim:/testbench_SHIFT_LEFT_LOGIC/OUT
+run
