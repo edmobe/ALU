@@ -1,4 +1,5 @@
 module testbench_ALU();
+	// Autochequeo
 	parameter nBits = 4;
 	logic [nBits-1:0] A;
 	logic [nBits-1:0] B;

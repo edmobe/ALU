@@ -9,7 +9,7 @@ module ALU #(parameter Nbits=5) (
 	 //output Negative_Flag
 	 );
 	 
-	 SHIFT_LEFT_LOGIC #(Nbits) sll(A, B, OUT);
+	 SHIFT_LEFT #(Nbits) sll(A, B, OUT);
 	 //OUT = SHIFT_LEFT_LOGIC;
 /*
 	logic Carry_OUT; 

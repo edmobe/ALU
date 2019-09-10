@@ -9,14 +9,14 @@ B[1] => B[1].IN1
 B[2] => B[2].IN1
 B[3] => B[3].IN1
 B[4] => B[4].IN1
-OUT[0] << SHIFT_LEFT_LOGIC:sll.port2
-OUT[1] << SHIFT_LEFT_LOGIC:sll.port2
-OUT[2] << SHIFT_LEFT_LOGIC:sll.port2
-OUT[3] << SHIFT_LEFT_LOGIC:sll.port2
-OUT[4] << SHIFT_LEFT_LOGIC:sll.port2
+OUT[0] << SHIFT_LEFT:sll.port2
+OUT[1] << SHIFT_LEFT:sll.port2
+OUT[2] << SHIFT_LEFT:sll.port2
+OUT[3] << SHIFT_LEFT:sll.port2
+OUT[4] << SHIFT_LEFT:sll.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll
+|ALU|SHIFT_LEFT:sll
 A[0] => WIRES[25].IN1
 A[1] => WIRES[26].IN1
 A[2] => WIRES[27].IN1
@@ -27,758 +27,758 @@ B[1] => B[1].IN5
 B[2] => B[2].IN5
 B[3] => B[3].IN5
 B[4] => B[4].IN5
-OUT[0] <= MUX:generate_shift_right_logic[0].generate_muxes_srl[0].f.port3
-OUT[1] <= MUX:generate_shift_right_logic[0].generate_muxes_srl[1].f.port3
-OUT[2] <= MUX:generate_shift_right_logic[0].generate_muxes_srl[2].f.port3
-OUT[3] <= MUX:generate_shift_right_logic[0].generate_muxes_srl[3].f.port3
-OUT[4] <= MUX:generate_shift_right_logic[0].generate_muxes_srl[4].f.port3
+OUT[0] <= MUX:generate_shift_right[0].generate_muxes_sl[0].f.port3
+OUT[1] <= MUX:generate_shift_right[0].generate_muxes_sl[1].f.port3
+OUT[2] <= MUX:generate_shift_right[0].generate_muxes_sl[2].f.port3
+OUT[3] <= MUX:generate_shift_right[0].generate_muxes_sl[3].f.port3
+OUT[4] <= MUX:generate_shift_right[0].generate_muxes_sl[4].f.port3
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[4].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[4].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[4].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[4].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[4].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[4].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[4].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[4].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[4].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[4].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[3].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[3].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[3].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[3].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[3].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[3].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[3].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[3].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[3].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[3].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[2].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[2].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[2].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[2].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[2].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[1].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[1].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[1].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[1].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[1].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[0].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[0].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[0].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[0].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[4].generate_muxes_srl[0].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[4].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[4].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[4].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[4].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[4].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[4].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[4].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[4].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[4].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[4].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[3].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[3].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[3].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[3].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[3].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[3].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[3].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[3].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[3].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[3].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[2].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[2].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[2].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[2].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[2].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[1].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[1].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[1].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[1].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[1].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[0].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[0].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[0].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[0].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[3].generate_muxes_srl[0].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[4].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[4].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[4].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[4].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[4].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[4].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[4].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[4].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[4].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[4].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[3].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[3].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[3].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[3].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[3].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[3].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[3].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[3].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[3].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[3].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[2].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[2].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[2].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[2].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[2].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[1].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[1].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[1].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[1].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[1].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[0].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[0].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[0].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[0].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[2].generate_muxes_srl[0].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[4].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[4].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[4].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[4].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[4].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[4].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[4].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[4].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[4].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[4].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[3].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[3].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[3].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[3].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[3].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[3].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[3].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[3].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[3].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[3].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[2].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[2].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[2].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[2].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[2].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[1].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[1].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[1].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[1].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[1].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[0].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[0].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[0].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[0].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[1].generate_muxes_srl[0].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[4].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[4].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[4].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[4].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[4].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[4].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[4].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[4].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[4].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[4].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[3].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[3].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[3].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[3].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[3].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[3].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[3].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[3].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[3].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[3].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[2].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[2].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[2].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[2].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[2].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[1].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[1].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[1].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[1].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[1].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[0].f
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[0].f|GATE_NOT:NOT
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[0].f|GATE_AND:AND_A
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[0].f|GATE_AND:AND_B
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT_LOGIC:sll|MUX:generate_shift_right_logic[0].generate_muxes_srl[0].f|GATE_OR:OR
+|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE

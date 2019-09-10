@@ -16,7 +16,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
-// DATE "09/09/2019 01:37:13"
+// DATE "09/09/2019 20:52:56"
 
 // 
 // Device: Altera 5CGXFC7C7F23C8 Package FBGA484
@@ -72,25 +72,25 @@ wire \B[1]~input_o ;
 wire \A[0]~input_o ;
 wire \B[0]~input_o ;
 wire \B[2]~input_o ;
-wire \sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0_combout ;
+wire \sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0_combout ;
 wire \A[1]~input_o ;
-wire \sll|generate_shift_right_logic[0].generate_muxes_srl[1].f|OR|OUT[0]~0_combout ;
+wire \sll|generate_shift_right[0].generate_muxes_sl[1].f|OR|OUT[0]~0_combout ;
 wire \A[2]~input_o ;
-wire \sll|generate_shift_right_logic[0].generate_muxes_srl[2].f|OR|OUT[0]~0_combout ;
+wire \sll|generate_shift_right[0].generate_muxes_sl[2].f|OR|OUT[0]~0_combout ;
 wire \A[3]~input_o ;
-wire \sll|generate_shift_right_logic[0].generate_muxes_srl[3].f|OR|OUT[0]~0_combout ;
+wire \sll|generate_shift_right[0].generate_muxes_sl[3].f|OR|OUT[0]~0_combout ;
 wire \A[4]~input_o ;
-wire \sll|generate_shift_right_logic[2].generate_muxes_srl[4].f|OR|OUT[0]~0_combout ;
-wire \sll|generate_shift_right_logic[0].generate_muxes_srl[4].f|OR|OUT[0]~0_combout ;
-wire [0:0] \sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT ;
-wire [0:0] \sll|generate_shift_right_logic[0].generate_muxes_srl[0].f|AND_A|OUT ;
-wire [0:0] \sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT ;
-wire [0:0] \sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT ;
+wire \sll|generate_shift_right[2].generate_muxes_sl[4].f|OR|OUT[0]~0_combout ;
+wire \sll|generate_shift_right[0].generate_muxes_sl[4].f|OR|OUT[0]~0_combout ;
+wire [0:0] \sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT ;
+wire [0:0] \sll|generate_shift_right[0].generate_muxes_sl[0].f|AND_A|OUT ;
+wire [0:0] \sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT ;
+wire [0:0] \sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT ;
 
 
 // Location: IOOBUF_X89_Y38_N39
 cyclonev_io_obuf \OUT[0]~output (
-	.i(\sll|generate_shift_right_logic[0].generate_muxes_srl[0].f|AND_A|OUT [0]),
+	.i(\sll|generate_shift_right[0].generate_muxes_sl[0].f|AND_A|OUT [0]),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -106,7 +106,7 @@ defparam \OUT[0]~output .shift_series_termination_control = "false";
 
 // Location: IOOBUF_X89_Y38_N5
 cyclonev_io_obuf \OUT[1]~output (
-	.i(\sll|generate_shift_right_logic[0].generate_muxes_srl[1].f|OR|OUT[0]~0_combout ),
+	.i(\sll|generate_shift_right[0].generate_muxes_sl[1].f|OR|OUT[0]~0_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -122,7 +122,7 @@ defparam \OUT[1]~output .shift_series_termination_control = "false";
 
 // Location: IOOBUF_X89_Y38_N56
 cyclonev_io_obuf \OUT[2]~output (
-	.i(\sll|generate_shift_right_logic[0].generate_muxes_srl[2].f|OR|OUT[0]~0_combout ),
+	.i(\sll|generate_shift_right[0].generate_muxes_sl[2].f|OR|OUT[0]~0_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -138,7 +138,7 @@ defparam \OUT[2]~output .shift_series_termination_control = "false";
 
 // Location: IOOBUF_X89_Y35_N45
 cyclonev_io_obuf \OUT[3]~output (
-	.i(\sll|generate_shift_right_logic[0].generate_muxes_srl[3].f|OR|OUT[0]~0_combout ),
+	.i(\sll|generate_shift_right[0].generate_muxes_sl[3].f|OR|OUT[0]~0_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -154,7 +154,7 @@ defparam \OUT[3]~output .shift_series_termination_control = "false";
 
 // Location: IOOBUF_X89_Y35_N96
 cyclonev_io_obuf \OUT[4]~output (
-	.i(\sll|generate_shift_right_logic[0].generate_muxes_srl[4].f|OR|OUT[0]~0_combout ),
+	.i(\sll|generate_shift_right[0].generate_muxes_sl[4].f|OR|OUT[0]~0_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -235,9 +235,9 @@ defparam \B[2]~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: LABCELL_X88_Y36_N30
-cyclonev_lcell_comb \sll|generate_shift_right_logic[0].generate_muxes_srl[0].f|AND_A|OUT[0] (
+cyclonev_lcell_comb \sll|generate_shift_right[0].generate_muxes_sl[0].f|AND_A|OUT[0] (
 // Equation(s):
-// \sll|generate_shift_right_logic[0].generate_muxes_srl[0].f|AND_A|OUT [0] = ( !\B[0]~input_o  & ( !\B[2]~input_o  & ( (!\B[3]~input_o  & (!\B[4]~input_o  & (!\B[1]~input_o  & \A[0]~input_o ))) ) ) )
+// \sll|generate_shift_right[0].generate_muxes_sl[0].f|AND_A|OUT [0] = ( !\B[0]~input_o  & ( !\B[2]~input_o  & ( (!\B[3]~input_o  & (!\B[4]~input_o  & (!\B[1]~input_o  & \A[0]~input_o ))) ) ) )
 
 	.dataa(!\B[3]~input_o ),
 	.datab(!\B[4]~input_o ),
@@ -248,20 +248,20 @@ cyclonev_lcell_comb \sll|generate_shift_right_logic[0].generate_muxes_srl[0].f|A
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\sll|generate_shift_right_logic[0].generate_muxes_srl[0].f|AND_A|OUT [0]),
+	.combout(\sll|generate_shift_right[0].generate_muxes_sl[0].f|AND_A|OUT [0]),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[0].f|AND_A|OUT[0] .extended_lut = "off";
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[0].f|AND_A|OUT[0] .lut_mask = 64'h0080000000000000;
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[0].f|AND_A|OUT[0] .shared_arith = "off";
+defparam \sll|generate_shift_right[0].generate_muxes_sl[0].f|AND_A|OUT[0] .extended_lut = "off";
+defparam \sll|generate_shift_right[0].generate_muxes_sl[0].f|AND_A|OUT[0] .lut_mask = 64'h0080000000000000;
+defparam \sll|generate_shift_right[0].generate_muxes_sl[0].f|AND_A|OUT[0] .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X88_Y36_N6
-cyclonev_lcell_comb \sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0 (
+cyclonev_lcell_comb \sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0 (
 // Equation(s):
-// \sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0_combout  = ( \A[0]~input_o  & ( !\B[2]~input_o  & ( (!\B[4]~input_o  & !\B[3]~input_o ) ) ) )
+// \sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0_combout  = ( \A[0]~input_o  & ( !\B[2]~input_o  & ( (!\B[4]~input_o  & !\B[3]~input_o ) ) ) )
 
 	.dataa(gnd),
 	.datab(!\B[4]~input_o ),
@@ -272,14 +272,14 @@ cyclonev_lcell_comb \sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|A
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0_combout ),
+	.combout(\sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0 .extended_lut = "off";
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0 .lut_mask = 64'h0000C0C000000000;
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0 .shared_arith = "off";
+defparam \sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0 .extended_lut = "off";
+defparam \sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0 .lut_mask = 64'h0000C0C000000000;
+defparam \sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: IOIBUF_X89_Y36_N21
@@ -294,9 +294,9 @@ defparam \A[1]~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: LABCELL_X88_Y36_N12
-cyclonev_lcell_comb \sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT[0] (
+cyclonev_lcell_comb \sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT[0] (
 // Equation(s):
-// \sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT [0] = ( !\B[4]~input_o  & ( !\B[2]~input_o  & ( (!\B[3]~input_o  & \A[1]~input_o ) ) ) )
+// \sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0] = ( !\B[4]~input_o  & ( !\B[2]~input_o  & ( (!\B[3]~input_o  & \A[1]~input_o ) ) ) )
 
 	.dataa(!\B[3]~input_o ),
 	.datab(gnd),
@@ -307,39 +307,39 @@ cyclonev_lcell_comb \sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|A
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT [0]),
+	.combout(\sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0]),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT[0] .extended_lut = "off";
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT[0] .lut_mask = 64'h0A0A000000000000;
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT[0] .shared_arith = "off";
+defparam \sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT[0] .extended_lut = "off";
+defparam \sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT[0] .lut_mask = 64'h0A0A000000000000;
+defparam \sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT[0] .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X88_Y36_N51
-cyclonev_lcell_comb \sll|generate_shift_right_logic[0].generate_muxes_srl[1].f|OR|OUT[0]~0 (
+cyclonev_lcell_comb \sll|generate_shift_right[0].generate_muxes_sl[1].f|OR|OUT[0]~0 (
 // Equation(s):
-// \sll|generate_shift_right_logic[0].generate_muxes_srl[1].f|OR|OUT[0]~0_combout  = ( \B[0]~input_o  & ( !\B[1]~input_o  & ( \sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0_combout  ) ) ) # ( !\B[0]~input_o  & ( !\B[1]~input_o  & ( 
-// \sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT [0] ) ) )
+// \sll|generate_shift_right[0].generate_muxes_sl[1].f|OR|OUT[0]~0_combout  = ( \B[0]~input_o  & ( !\B[1]~input_o  & ( \sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0_combout  ) ) ) # ( !\B[0]~input_o  & ( !\B[1]~input_o  & ( 
+// \sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0] ) ) )
 
 	.dataa(gnd),
-	.datab(!\sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0_combout ),
-	.datac(!\sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT [0]),
+	.datab(!\sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0_combout ),
+	.datac(!\sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0]),
 	.datad(gnd),
 	.datae(!\B[0]~input_o ),
 	.dataf(!\B[1]~input_o ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\sll|generate_shift_right_logic[0].generate_muxes_srl[1].f|OR|OUT[0]~0_combout ),
+	.combout(\sll|generate_shift_right[0].generate_muxes_sl[1].f|OR|OUT[0]~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[1].f|OR|OUT[0]~0 .extended_lut = "off";
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[1].f|OR|OUT[0]~0 .lut_mask = 64'h0F0F333300000000;
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[1].f|OR|OUT[0]~0 .shared_arith = "off";
+defparam \sll|generate_shift_right[0].generate_muxes_sl[1].f|OR|OUT[0]~0 .extended_lut = "off";
+defparam \sll|generate_shift_right[0].generate_muxes_sl[1].f|OR|OUT[0]~0 .lut_mask = 64'h0F0F333300000000;
+defparam \sll|generate_shift_right[0].generate_muxes_sl[1].f|OR|OUT[0]~0 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: IOIBUF_X89_Y36_N4
@@ -354,9 +354,9 @@ defparam \A[2]~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: LABCELL_X88_Y36_N27
-cyclonev_lcell_comb \sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT[0] (
+cyclonev_lcell_comb \sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT[0] (
 // Equation(s):
-// \sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0] = ( !\B[4]~input_o  & ( !\B[2]~input_o  & ( (\A[2]~input_o  & !\B[3]~input_o ) ) ) )
+// \sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0] = ( !\B[4]~input_o  & ( !\B[2]~input_o  & ( (\A[2]~input_o  & !\B[3]~input_o ) ) ) )
 
 	.dataa(!\A[2]~input_o ),
 	.datab(gnd),
@@ -367,42 +367,42 @@ cyclonev_lcell_comb \sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|A
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0]),
+	.combout(\sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0]),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT[0] .extended_lut = "off";
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT[0] .lut_mask = 64'h5500000000000000;
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT[0] .shared_arith = "off";
+defparam \sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT[0] .extended_lut = "off";
+defparam \sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT[0] .lut_mask = 64'h5500000000000000;
+defparam \sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT[0] .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X88_Y36_N0
-cyclonev_lcell_comb \sll|generate_shift_right_logic[0].generate_muxes_srl[2].f|OR|OUT[0]~0 (
+cyclonev_lcell_comb \sll|generate_shift_right[0].generate_muxes_sl[2].f|OR|OUT[0]~0 (
 // Equation(s):
-// \sll|generate_shift_right_logic[0].generate_muxes_srl[2].f|OR|OUT[0]~0_combout  = ( \sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0] & ( \B[1]~input_o  & ( (!\B[0]~input_o  & 
-// \sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0_combout ) ) ) ) # ( !\sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0] & ( \B[1]~input_o  & ( (!\B[0]~input_o  & 
-// \sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0_combout ) ) ) ) # ( \sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0] & ( !\B[1]~input_o  & ( (!\B[0]~input_o ) # 
-// (\sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT [0]) ) ) ) # ( !\sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0] & ( !\B[1]~input_o  & ( (\sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT 
-// [0] & \B[0]~input_o ) ) ) )
+// \sll|generate_shift_right[0].generate_muxes_sl[2].f|OR|OUT[0]~0_combout  = ( \sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0] & ( \B[1]~input_o  & ( (!\B[0]~input_o  & 
+// \sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0_combout ) ) ) ) # ( !\sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0] & ( \B[1]~input_o  & ( (!\B[0]~input_o  & 
+// \sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0_combout ) ) ) ) # ( \sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0] & ( !\B[1]~input_o  & ( (!\B[0]~input_o ) # 
+// (\sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0]) ) ) ) # ( !\sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0] & ( !\B[1]~input_o  & ( (\sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0] & \B[0]~input_o ) ) 
+// ) )
 
 	.dataa(gnd),
-	.datab(!\sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT [0]),
+	.datab(!\sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0]),
 	.datac(!\B[0]~input_o ),
-	.datad(!\sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0_combout ),
-	.datae(!\sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0]),
+	.datad(!\sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0_combout ),
+	.datae(!\sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0]),
 	.dataf(!\B[1]~input_o ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\sll|generate_shift_right_logic[0].generate_muxes_srl[2].f|OR|OUT[0]~0_combout ),
+	.combout(\sll|generate_shift_right[0].generate_muxes_sl[2].f|OR|OUT[0]~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[2].f|OR|OUT[0]~0 .extended_lut = "off";
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[2].f|OR|OUT[0]~0 .lut_mask = 64'h0303F3F300F000F0;
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[2].f|OR|OUT[0]~0 .shared_arith = "off";
+defparam \sll|generate_shift_right[0].generate_muxes_sl[2].f|OR|OUT[0]~0 .extended_lut = "off";
+defparam \sll|generate_shift_right[0].generate_muxes_sl[2].f|OR|OUT[0]~0 .lut_mask = 64'h0303F3F300F000F0;
+defparam \sll|generate_shift_right[0].generate_muxes_sl[2].f|OR|OUT[0]~0 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: IOIBUF_X89_Y36_N55
@@ -417,9 +417,9 @@ defparam \A[3]~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: LABCELL_X88_Y36_N36
-cyclonev_lcell_comb \sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT[0] (
+cyclonev_lcell_comb \sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT[0] (
 // Equation(s):
-// \sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT [0] = ( !\B[2]~input_o  & ( (!\B[3]~input_o  & (!\B[4]~input_o  & \A[3]~input_o )) ) )
+// \sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT [0] = ( !\B[2]~input_o  & ( (!\B[3]~input_o  & (!\B[4]~input_o  & \A[3]~input_o )) ) )
 
 	.dataa(!\B[3]~input_o ),
 	.datab(!\B[4]~input_o ),
@@ -430,43 +430,42 @@ cyclonev_lcell_comb \sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|A
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT [0]),
+	.combout(\sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT [0]),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT[0] .extended_lut = "off";
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT[0] .lut_mask = 64'h0808080800000000;
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT[0] .shared_arith = "off";
+defparam \sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT[0] .extended_lut = "off";
+defparam \sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT[0] .lut_mask = 64'h0808080800000000;
+defparam \sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT[0] .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X88_Y36_N42
-cyclonev_lcell_comb \sll|generate_shift_right_logic[0].generate_muxes_srl[3].f|OR|OUT[0]~0 (
+cyclonev_lcell_comb \sll|generate_shift_right[0].generate_muxes_sl[3].f|OR|OUT[0]~0 (
 // Equation(s):
-// \sll|generate_shift_right_logic[0].generate_muxes_srl[3].f|OR|OUT[0]~0_combout  = ( \sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT [0] & ( \B[1]~input_o  & ( (!\B[0]~input_o  & 
-// (\sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT [0])) # (\B[0]~input_o  & ((\sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0_combout ))) ) ) ) # ( 
-// !\sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT [0] & ( \B[1]~input_o  & ( (!\B[0]~input_o  & (\sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT [0])) # (\B[0]~input_o  & 
-// ((\sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0_combout ))) ) ) ) # ( \sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT [0] & ( !\B[1]~input_o  & ( (!\B[0]~input_o ) # 
-// (\sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0]) ) ) ) # ( !\sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT [0] & ( !\B[1]~input_o  & ( (\B[0]~input_o  & 
-// \sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0]) ) ) )
+// \sll|generate_shift_right[0].generate_muxes_sl[3].f|OR|OUT[0]~0_combout  = ( \sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT [0] & ( \B[1]~input_o  & ( (!\B[0]~input_o  & (\sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0])) # 
+// (\B[0]~input_o  & ((\sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0_combout ))) ) ) ) # ( !\sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT [0] & ( \B[1]~input_o  & ( (!\B[0]~input_o  & 
+// (\sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0])) # (\B[0]~input_o  & ((\sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0_combout ))) ) ) ) # ( \sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT [0] & ( 
+// !\B[1]~input_o  & ( (!\B[0]~input_o ) # (\sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0]) ) ) ) # ( !\sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT [0] & ( !\B[1]~input_o  & ( (\B[0]~input_o  & 
+// \sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0]) ) ) )
 
 	.dataa(!\B[0]~input_o ),
-	.datab(!\sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT [0]),
-	.datac(!\sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0]),
-	.datad(!\sll|generate_shift_right_logic[2].generate_muxes_srl[0].f|AND_A|OUT[0]~0_combout ),
-	.datae(!\sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT [0]),
+	.datab(!\sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0]),
+	.datac(!\sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0]),
+	.datad(!\sll|generate_shift_right[2].generate_muxes_sl[0].f|AND_A|OUT[0]~0_combout ),
+	.datae(!\sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT [0]),
 	.dataf(!\B[1]~input_o ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\sll|generate_shift_right_logic[0].generate_muxes_srl[3].f|OR|OUT[0]~0_combout ),
+	.combout(\sll|generate_shift_right[0].generate_muxes_sl[3].f|OR|OUT[0]~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[3].f|OR|OUT[0]~0 .extended_lut = "off";
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[3].f|OR|OUT[0]~0 .lut_mask = 64'h0505AFAF22772277;
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[3].f|OR|OUT[0]~0 .shared_arith = "off";
+defparam \sll|generate_shift_right[0].generate_muxes_sl[3].f|OR|OUT[0]~0 .extended_lut = "off";
+defparam \sll|generate_shift_right[0].generate_muxes_sl[3].f|OR|OUT[0]~0 .lut_mask = 64'h0505AFAF22772277;
+defparam \sll|generate_shift_right[0].generate_muxes_sl[3].f|OR|OUT[0]~0 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: IOIBUF_X89_Y36_N38
@@ -481,9 +480,9 @@ defparam \A[4]~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: LABCELL_X88_Y36_N39
-cyclonev_lcell_comb \sll|generate_shift_right_logic[2].generate_muxes_srl[4].f|OR|OUT[0]~0 (
+cyclonev_lcell_comb \sll|generate_shift_right[2].generate_muxes_sl[4].f|OR|OUT[0]~0 (
 // Equation(s):
-// \sll|generate_shift_right_logic[2].generate_muxes_srl[4].f|OR|OUT[0]~0_combout  = ( \B[2]~input_o  & ( (!\B[3]~input_o  & (!\B[4]~input_o  & \A[0]~input_o )) ) ) # ( !\B[2]~input_o  & ( (!\B[3]~input_o  & (!\B[4]~input_o  & \A[4]~input_o )) ) )
+// \sll|generate_shift_right[2].generate_muxes_sl[4].f|OR|OUT[0]~0_combout  = ( \B[2]~input_o  & ( (!\B[3]~input_o  & (!\B[4]~input_o  & \A[0]~input_o )) ) ) # ( !\B[2]~input_o  & ( (!\B[3]~input_o  & (!\B[4]~input_o  & \A[4]~input_o )) ) )
 
 	.dataa(!\B[3]~input_o ),
 	.datab(!\B[4]~input_o ),
@@ -494,42 +493,42 @@ cyclonev_lcell_comb \sll|generate_shift_right_logic[2].generate_muxes_srl[4].f|O
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\sll|generate_shift_right_logic[2].generate_muxes_srl[4].f|OR|OUT[0]~0_combout ),
+	.combout(\sll|generate_shift_right[2].generate_muxes_sl[4].f|OR|OUT[0]~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[4].f|OR|OUT[0]~0 .extended_lut = "off";
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[4].f|OR|OUT[0]~0 .lut_mask = 64'h0808080800880088;
-defparam \sll|generate_shift_right_logic[2].generate_muxes_srl[4].f|OR|OUT[0]~0 .shared_arith = "off";
+defparam \sll|generate_shift_right[2].generate_muxes_sl[4].f|OR|OUT[0]~0 .extended_lut = "off";
+defparam \sll|generate_shift_right[2].generate_muxes_sl[4].f|OR|OUT[0]~0 .lut_mask = 64'h0808080800880088;
+defparam \sll|generate_shift_right[2].generate_muxes_sl[4].f|OR|OUT[0]~0 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X88_Y36_N18
-cyclonev_lcell_comb \sll|generate_shift_right_logic[0].generate_muxes_srl[4].f|OR|OUT[0]~0 (
+cyclonev_lcell_comb \sll|generate_shift_right[0].generate_muxes_sl[4].f|OR|OUT[0]~0 (
 // Equation(s):
-// \sll|generate_shift_right_logic[0].generate_muxes_srl[4].f|OR|OUT[0]~0_combout  = ( \sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT [0] & ( \B[1]~input_o  & ( (!\B[0]~input_o  & 
-// (\sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0])) # (\B[0]~input_o  & ((\sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT [0]))) ) ) ) # ( !\sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT 
-// [0] & ( \B[1]~input_o  & ( (!\B[0]~input_o  & (\sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0])) # (\B[0]~input_o  & ((\sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT [0]))) ) ) ) # ( 
-// \sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT [0] & ( !\B[1]~input_o  & ( (\sll|generate_shift_right_logic[2].generate_muxes_srl[4].f|OR|OUT[0]~0_combout ) # (\B[0]~input_o ) ) ) ) # ( 
-// !\sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT [0] & ( !\B[1]~input_o  & ( (!\B[0]~input_o  & \sll|generate_shift_right_logic[2].generate_muxes_srl[4].f|OR|OUT[0]~0_combout ) ) ) )
+// \sll|generate_shift_right[0].generate_muxes_sl[4].f|OR|OUT[0]~0_combout  = ( \sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT [0] & ( \B[1]~input_o  & ( (!\B[0]~input_o  & (\sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0])) # 
+// (\B[0]~input_o  & ((\sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0]))) ) ) ) # ( !\sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT [0] & ( \B[1]~input_o  & ( (!\B[0]~input_o  & 
+// (\sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0])) # (\B[0]~input_o  & ((\sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0]))) ) ) ) # ( \sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT [0] & ( !\B[1]~input_o  
+// & ( (\sll|generate_shift_right[2].generate_muxes_sl[4].f|OR|OUT[0]~0_combout ) # (\B[0]~input_o ) ) ) ) # ( !\sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT [0] & ( !\B[1]~input_o  & ( (!\B[0]~input_o  & 
+// \sll|generate_shift_right[2].generate_muxes_sl[4].f|OR|OUT[0]~0_combout ) ) ) )
 
 	.dataa(!\B[0]~input_o ),
-	.datab(!\sll|generate_shift_right_logic[2].generate_muxes_srl[4].f|OR|OUT[0]~0_combout ),
-	.datac(!\sll|generate_shift_right_logic[2].generate_muxes_srl[2].f|AND_A|OUT [0]),
-	.datad(!\sll|generate_shift_right_logic[2].generate_muxes_srl[1].f|AND_A|OUT [0]),
-	.datae(!\sll|generate_shift_right_logic[2].generate_muxes_srl[3].f|AND_A|OUT [0]),
+	.datab(!\sll|generate_shift_right[2].generate_muxes_sl[4].f|OR|OUT[0]~0_combout ),
+	.datac(!\sll|generate_shift_right[2].generate_muxes_sl[2].f|AND_A|OUT [0]),
+	.datad(!\sll|generate_shift_right[2].generate_muxes_sl[1].f|AND_A|OUT [0]),
+	.datae(!\sll|generate_shift_right[2].generate_muxes_sl[3].f|AND_A|OUT [0]),
 	.dataf(!\B[1]~input_o ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\sll|generate_shift_right_logic[0].generate_muxes_srl[4].f|OR|OUT[0]~0_combout ),
+	.combout(\sll|generate_shift_right[0].generate_muxes_sl[4].f|OR|OUT[0]~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[4].f|OR|OUT[0]~0 .extended_lut = "off";
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[4].f|OR|OUT[0]~0 .lut_mask = 64'h222277770A5F0A5F;
-defparam \sll|generate_shift_right_logic[0].generate_muxes_srl[4].f|OR|OUT[0]~0 .shared_arith = "off";
+defparam \sll|generate_shift_right[0].generate_muxes_sl[4].f|OR|OUT[0]~0 .extended_lut = "off";
+defparam \sll|generate_shift_right[0].generate_muxes_sl[4].f|OR|OUT[0]~0 .lut_mask = 64'h222277770A5F0A5F;
+defparam \sll|generate_shift_right[0].generate_muxes_sl[4].f|OR|OUT[0]~0 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X48_Y36_N3
