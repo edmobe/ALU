@@ -2,9 +2,10 @@ module testbench_SHIFT_RIGHT();
 	logic TYPE;
 	logic [7:0] A;
 	logic [7:0] B;
-	wire [7:0] OUT;
+	logic [7:0] OUT;
+	logic OVERFLOW;
 	
-	SHIFT_RIGHT #8 SHIFT_RIGHT_test(TYPE, A, B, OUT);
+	SHIFT_RIGHT #8 SHIFT_RIGHT_test(TYPE, A, B, OUT, OVERFLOW);
 
 	initial
 		begin	

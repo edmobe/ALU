@@ -1,8 +1,9 @@
 module SHIFT_RIGHT #(parameter Nbits=4)(
-	input TYPE, // 0 -> logic, 1 -> arithmetic
+	input ADD_MSB, // Number to add at MSB
 	input  [Nbits-1:0] A, 
 	input [Nbits-1:0] B,
-	output [Nbits-1:0] OUT);
+	output [Nbits-1:0] OUT,
+	output OVERFLOW);
 	
 	genvar i;
 	logic [Nbits*(Nbits+1)-1:0] WIRES;
@@ -14,7 +15,7 @@ module SHIFT_RIGHT #(parameter Nbits=4)(
 			for (a_n=Nbits-1; a_n>=0; a_n--) begin: generate_muxes_sr
 				if(a_n+2**i >= Nbits)
 					begin
-						MUX f (WIRES[a_n+Nbits*(i+1)], TYPE, B[i], WIRES[a_n+Nbits*i]);
+						MUX f (WIRES[a_n+Nbits*(i+1)], ADD_MSB, B[i], WIRES[a_n+Nbits*i]);
 					end
 				else
 					begin
@@ -23,6 +24,7 @@ module SHIFT_RIGHT #(parameter Nbits=4)(
 			end	
 		end
 		assign OUT = WIRES[Nbits-1:0];
+		xor(OVERFLOW, A[Nbits-1], OUT[Nbits-1]);
 	endgenerate
 	
 endmodule: SHIFT_RIGHT

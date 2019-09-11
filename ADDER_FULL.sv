@@ -3,7 +3,8 @@ module ADDER_FULL #(parameter Nbits=4)
 	 input [Nbits-1:0] B,
 	 input C_IN,
 	 output [Nbits-1:0] SUM,
-	 output C_OUT);
+	 output C_OUT,
+	 output OVERFLOW);
 	 
 	genvar i;
 	logic [Nbits-1:0] C_HALF;
@@ -19,6 +20,7 @@ module ADDER_FULL #(parameter Nbits=4)
 						ADDER_HALF f (A[i], B[i], C_HALF[i-1], SUM[i], C_HALF[i]);
 					end		
 		end
+		xor(OVERFLOW, C_HALF[Nbits-1], C_HALF[Nbits-2]); 
 		assign C_OUT = C_HALF[Nbits-1];
 	endgenerate	
  

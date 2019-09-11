@@ -1,786 +1,1258 @@
 |ALU
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+SW[4] => SW[4].IN1
+SW[5] => SW[5].IN1
+SW[6] => SW[6].IN1
+SW[7] => SW[7].IN1
+SW[8] => SW[8].IN1
+SW[9] => SW[9].IN1
+LEDR[0] <= <GND>
+LEDR[1] <= <GND>
+LEDR[2] <= <GND>
+LEDR[3] <= ALU_N:ALU_FPGA.port7
+LEDR[4] <= ALU_N:ALU_FPGA.port6
+LEDR[5] <= ALU_N:ALU_FPGA.port5
+LEDR[6] <= ALU_N:ALU_FPGA.port4
+LEDR[7] <= ALU_N:ALU_FPGA.port3
+LEDR[8] <= ALU_N:ALU_FPGA.port3
+LEDR[9] <= ALU_N:ALU_FPGA.port3
+
+
+|ALU|ALU_N:ALU_FPGA
+A[0] => A[0].IN9
+A[1] => A[1].IN9
+A[2] => A[2].IN10
+B[0] => B[0].IN8
+B[1] => B[1].IN8
+B[2] => B[2].IN8
+SELECT[0] => Mux0.IN9
+SELECT[0] => Mux1.IN9
+SELECT[0] => Mux2.IN9
+SELECT[0] => Decoder0.IN3
+SELECT[0] => Mux3.IN15
+SELECT[0] => Mux4.IN15
+SELECT[0] => Mux5.IN15
+SELECT[1] => Mux0.IN8
+SELECT[1] => Mux1.IN8
+SELECT[1] => Mux2.IN8
+SELECT[1] => Decoder0.IN2
+SELECT[1] => Mux3.IN14
+SELECT[1] => Mux4.IN14
+SELECT[1] => Mux5.IN14
+SELECT[2] => Mux0.IN7
+SELECT[2] => Mux1.IN7
+SELECT[2] => Mux2.IN7
+SELECT[2] => Decoder0.IN1
+SELECT[2] => Mux3.IN13
+SELECT[2] => Mux4.IN13
+SELECT[2] => Mux5.IN13
+SELECT[3] => Mux0.IN6
+SELECT[3] => Mux1.IN6
+SELECT[3] => Mux2.IN6
+SELECT[3] => Decoder0.IN0
+SELECT[3] => Mux3.IN12
+SELECT[3] => Mux4.IN12
+SELECT[3] => Mux5.IN12
+OUT[0] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+FLAG_CARRY <= ALU_FLAG_CARRY.DB_MAX_OUTPUT_PORT_TYPE
+FLAG_OVERFLOW <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+FLAG_NEGATIVE <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+FLAG_ZERO <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL
 A[0] => A[0].IN1
 A[1] => A[1].IN1
 A[2] => A[2].IN1
-A[3] => A[3].IN1
-A[4] => A[4].IN1
 B[0] => B[0].IN1
 B[1] => B[1].IN1
 B[2] => B[2].IN1
-B[3] => B[3].IN1
-B[4] => B[4].IN1
-OUT[0] << SHIFT_LEFT:sll.port2
-OUT[1] << SHIFT_LEFT:sll.port2
-OUT[2] << SHIFT_LEFT:sll.port2
-OUT[3] << SHIFT_LEFT:sll.port2
-OUT[4] << SHIFT_LEFT:sll.port2
+C_IN => C_IN.IN1
+SUM[0] <= ADDER_HALF:generate_full_adder[0].f.port3
+SUM[1] <= ADDER_HALF:generate_full_adder[1].f.port3
+SUM[2] <= ADDER_HALF:generate_full_adder[2].f.port3
+C_OUT <= ADDER_HALF:generate_full_adder[2].f.port4
+OVERFLOW <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll
-A[0] => WIRES[25].IN1
-A[1] => WIRES[26].IN1
-A[2] => WIRES[27].IN1
-A[3] => WIRES[28].IN1
-A[4] => WIRES[29].IN1
-B[0] => B[0].IN5
-B[1] => B[1].IN5
-B[2] => B[2].IN5
-B[3] => B[3].IN5
-B[4] => B[4].IN5
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[0].f
+A => A.IN2
+B => B.IN2
+C_IN => C_IN.IN2
+SUM <= GATE_XOR:OP4.port2
+C_OUT <= GATE_OR:OP5.port2
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[0].f|GATE_XOR:OP1
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[0].f|GATE_AND:OP2
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[0].f|GATE_AND:OP3
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[0].f|GATE_XOR:OP4
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[0].f|GATE_OR:OP5
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[1].f
+A => A.IN2
+B => B.IN2
+C_IN => C_IN.IN2
+SUM <= GATE_XOR:OP4.port2
+C_OUT <= GATE_OR:OP5.port2
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[1].f|GATE_XOR:OP1
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[1].f|GATE_AND:OP2
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[1].f|GATE_AND:OP3
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[1].f|GATE_XOR:OP4
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[1].f|GATE_OR:OP5
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[2].f
+A => A.IN2
+B => B.IN2
+C_IN => C_IN.IN2
+SUM <= GATE_XOR:OP4.port2
+C_OUT <= GATE_OR:OP5.port2
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[2].f|GATE_XOR:OP1
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[2].f|GATE_AND:OP2
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[2].f|GATE_AND:OP3
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[2].f|GATE_XOR:OP4
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:ALU_ADDER_FULL|ADDER_HALF:generate_full_adder[2].f|GATE_OR:OP5
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|IS_ZERO:ALU_SUM_IS_ZERO
+A[0] => AND_OUTS[1].IN0
+A[1] => AND_OUTS[1].IN1
+A[2] => comb.IN1
+FLAG_ZERO <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|GATE_NOT:GATE_NOT_COMPLEMENT
+A[0] => OUT[0].DATAIN
+A[1] => OUT[1].DATAIN
+A[2] => OUT[2].DATAIN
+OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= A[1].DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= A[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+C_IN => C_IN.IN1
+SUM[0] <= ADDER_HALF:generate_full_adder[0].f.port3
+SUM[1] <= ADDER_HALF:generate_full_adder[1].f.port3
+SUM[2] <= ADDER_HALF:generate_full_adder[2].f.port3
+C_OUT <= ADDER_HALF:generate_full_adder[2].f.port4
+OVERFLOW <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[0].f
+A => A.IN2
+B => B.IN2
+C_IN => C_IN.IN2
+SUM <= GATE_XOR:OP4.port2
+C_OUT <= GATE_OR:OP5.port2
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[0].f|GATE_XOR:OP1
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[0].f|GATE_AND:OP2
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[0].f|GATE_AND:OP3
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[0].f|GATE_XOR:OP4
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[0].f|GATE_OR:OP5
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[1].f
+A => A.IN2
+B => B.IN2
+C_IN => C_IN.IN2
+SUM <= GATE_XOR:OP4.port2
+C_OUT <= GATE_OR:OP5.port2
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[1].f|GATE_XOR:OP1
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[1].f|GATE_AND:OP2
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[1].f|GATE_AND:OP3
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[1].f|GATE_XOR:OP4
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[1].f|GATE_OR:OP5
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[2].f
+A => A.IN2
+B => B.IN2
+C_IN => C_IN.IN2
+SUM <= GATE_XOR:OP4.port2
+C_OUT <= GATE_OR:OP5.port2
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[2].f|GATE_XOR:OP1
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[2].f|GATE_AND:OP2
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[2].f|GATE_AND:OP3
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[2].f|GATE_XOR:OP4
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|ADDER_FULL:SUBTRACTION|ADDER_HALF:generate_full_adder[2].f|GATE_OR:OP5
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|IS_ZERO:ALU_SUBT_IS_ZERO
+A[0] => AND_OUTS[1].IN0
+A[1] => AND_OUTS[1].IN1
+A[2] => comb.IN1
+FLAG_ZERO <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|GATE_NOT:NOT
+A[0] => OUT[0].DATAIN
+A[1] => OUT[1].DATAIN
+A[2] => OUT[2].DATAIN
+OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= A[1].DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= A[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|GATE_AND:AND
+A[0] => comb.IN0
+A[1] => comb.IN0
+A[2] => comb.IN0
+B[0] => comb.IN1
+B[1] => comb.IN1
+B[2] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|GATE_OR:OR
+A[0] => comb.IN0
+A[1] => comb.IN0
+A[2] => comb.IN0
+B[0] => comb.IN1
+B[1] => comb.IN1
+B[2] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|GATE_XOR:XOR
+A[0] => comb.IN0
+A[1] => comb.IN0
+A[2] => comb.IN0
+B[0] => comb.IN1
+B[1] => comb.IN1
+B[2] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT
+A[0] => WIRES[9].IN1
+A[1] => WIRES[10].IN1
+A[2] => WIRES[11].IN1
+B[0] => B[0].IN3
+B[1] => B[1].IN3
+B[2] => B[2].IN3
 OUT[0] <= MUX:generate_shift_right[0].generate_muxes_sl[0].f.port3
 OUT[1] <= MUX:generate_shift_right[0].generate_muxes_sl[1].f.port3
 OUT[2] <= MUX:generate_shift_right[0].generate_muxes_sl[2].f.port3
-OUT[3] <= MUX:generate_shift_right[0].generate_muxes_sl[3].f.port3
-OUT[4] <= MUX:generate_shift_right[0].generate_muxes_sl[4].f.port3
+OVERFLOW <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[4].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[4].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[4].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[4].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[4].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[3].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[3].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[3].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[3].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[3].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[2].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[2].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[2].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[2].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[2].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[2].generate_muxes_sl[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[1].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[1].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[1].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[1].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[1].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[0].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[0].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[0].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[0].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[4].generate_muxes_sl[0].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[4].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[4].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[4].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[4].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[4].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[1].generate_muxes_sl[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[3].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[3].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[3].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[3].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[3].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[2].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[2].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[2].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[2].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[2].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[1].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[1].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[1].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[1].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[1].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_LEFT:SHIFTING_LEFT|MUX:generate_shift_right[0].generate_muxes_sl[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[0].f
+|ALU|ALU_N:ALU_FPGA|IS_ZERO:ALU_SHIFT_LEFT_IS_ZERO
+A[0] => AND_OUTS[1].IN0
+A[1] => AND_OUTS[1].IN1
+A[2] => comb.IN1
+FLAG_ZERO <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC
+ADD_MSB => ADD_MSB.IN6
+A[0] => WIRES[9].IN1
+A[1] => WIRES[10].IN1
+A[2] => WIRES[11].IN1
+B[0] => B[0].IN3
+B[1] => B[1].IN3
+B[2] => B[2].IN3
+OUT[0] <= MUX:generate_shift_right[0].generate_muxes_sr[0].f.port3
+OUT[1] <= MUX:generate_shift_right[0].generate_muxes_sr[1].f.port3
+OUT[2] <= MUX:generate_shift_right[0].generate_muxes_sr[2].f.port3
+OVERFLOW <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[0].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[0].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[0].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[3].generate_muxes_sl[0].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[4].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[4].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[4].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[4].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[4].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[3].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[3].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[3].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[3].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[3].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[2].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[2].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[2].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[2].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[2].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[1].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[1].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[1].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[1].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[1].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[0].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[0].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[0].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[0].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[2].generate_muxes_sl[0].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[1].generate_muxes_sr[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[4].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[4].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[4].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[4].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[4].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[3].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[3].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[3].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[3].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[3].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[2].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[2].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[2].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[2].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[2].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[0].generate_muxes_sr[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[1].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC
+ADD_MSB => ADD_MSB.IN6
+A[0] => WIRES[9].IN1
+A[1] => WIRES[10].IN1
+A[2] => WIRES[11].IN1
+B[0] => B[0].IN3
+B[1] => B[1].IN3
+B[2] => B[2].IN3
+OUT[0] <= MUX:generate_shift_right[0].generate_muxes_sr[0].f.port3
+OUT[1] <= MUX:generate_shift_right[0].generate_muxes_sr[1].f.port3
+OUT[2] <= MUX:generate_shift_right[0].generate_muxes_sr[2].f.port3
+OVERFLOW <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[1].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[1].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[1].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[1].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[0].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[0].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[0].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[0].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[1].generate_muxes_sl[0].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[4].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[4].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[4].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[4].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[4].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[3].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[3].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[3].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[3].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[3].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[2].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[1].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[2].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[1].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[2].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[1].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[2].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[1].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[2].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[1].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[1].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[0].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[1].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[0].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[1].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[0].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[1].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[0].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[1].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[1].generate_muxes_sr[0].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[0].f
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[2].f
 A => A.IN1
 B => B.IN1
 SEL => SEL.IN2
 OUT <= GATE_OR:OR.port2
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[0].f|GATE_NOT:NOT
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[2].f|GATE_NOT:NOT
 A[0] => OUT[0].DATAIN
 OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[0].f|GATE_AND:AND_A
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[2].f|GATE_AND:AND_A
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[0].f|GATE_AND:AND_B
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[2].f|GATE_AND:AND_B
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|SHIFT_LEFT:sll|MUX:generate_shift_right[0].generate_muxes_sl[0].f|GATE_OR:OR
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[2].f|GATE_OR:OR
 A[0] => comb.IN0
 B[0] => comb.IN1
 OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[1].f
+A => A.IN1
+B => B.IN1
+SEL => SEL.IN2
+OUT <= GATE_OR:OR.port2
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[1].f|GATE_NOT:NOT
+A[0] => OUT[0].DATAIN
+OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[1].f|GATE_AND:AND_A
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[1].f|GATE_AND:AND_B
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[1].f|GATE_OR:OR
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[0].f
+A => A.IN1
+B => B.IN1
+SEL => SEL.IN2
+OUT <= GATE_OR:OR.port2
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[0].f|GATE_NOT:NOT
+A[0] => OUT[0].DATAIN
+OUT[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[0].f|GATE_AND:AND_A
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[0].f|GATE_AND:AND_B
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[0].generate_muxes_sr[0].f|GATE_OR:OR
+A[0] => comb.IN0
+B[0] => comb.IN1
+OUT[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ALU_N:ALU_FPGA|IS_ZERO:ALU_SRA_IS_ZERO
+A[0] => AND_OUTS[1].IN0
+A[1] => AND_OUTS[1].IN1
+A[2] => comb.IN1
+FLAG_ZERO <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 

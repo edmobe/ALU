@@ -1,0 +1,160 @@
+module testbench_ALU_3();
+	// Autochequeo falta
+	
+	parameter Nbits = 3;
+	
+	// INPUT VARIABLES
+	logic [Nbits-1:0] A;
+	logic [Nbits-1:0] B;
+	logic [Nbits-1:0] SELECT;
+	logic C_IN;
+	
+	// OUTPUT VARIABLES
+	logic [Nbits-1:0] OUT;
+	logic FLAG_CARRY;
+	logic FLAG_OVERFLOW;
+	logic FLAG_NEGATIVE;
+	logic FLAG_ZERO;
+	
+	ALU #Nbits ALU_test(A, B, SELECT, C_IN, OUT, FLAG_CARRY, FLAG_OVERFLOW, FLAG_NEGATIVE, FLAG_ZERO); 
+
+	initial
+		begin	
+		/*
+		// SUM
+		#10 assign A = 4'b0101; B = 4'b0001; SELECT = 4'b0000; C_IN = 0;
+		#10 assign A = 4'b0010; B = 4'b0000; SELECT = 4'b0000; C_IN = 1;
+		#10 assign A = 4'b1110; B = 4'b0010; SELECT = 4'b0000; C_IN = 0;
+		#10 assign A = 4'b0110; B = 4'b0100; SELECT = 4'b0000; C_IN = 1;
+		
+		// SUBTRACTION
+		#10 assign A = 4'b0101; B = 4'b0001; SELECT = 4'b0001; C_IN = 0;
+		#10 assign A = 4'b0010; B = 4'b0000; SELECT = 4'b0001; C_IN = 1;
+		#10 assign A = 4'b1110; B = 4'b0010; SELECT = 4'b0001; C_IN = 0;
+		#10 assign A = 4'b0110; B = 4'b0100; SELECT = 4'b0001; C_IN = 1;
+		
+		// NOT
+		#10 assign A = 4'b0101; B = 4'b0001; SELECT = 4'b0010; C_IN = 0;
+		#10 assign A = 4'b0010; B = 4'b0000; SELECT = 4'b0010; C_IN = 1;
+		#10 assign A = 4'b1110; B = 4'b0010; SELECT = 4'b0010; C_IN = 0;
+		#10 assign A = 4'b0110; B = 4'b0100; SELECT = 4'b0010; C_IN = 1;
+		
+		// AND
+		#10 assign A = 4'b0101; B = 4'b0001; SELECT = 4'b0011; C_IN = 0;
+		#10 assign A = 4'b0010; B = 4'b0000; SELECT = 4'b0011; C_IN = 1;
+		#10 assign A = 4'b1110; B = 4'b0010; SELECT = 4'b0011; C_IN = 0;
+		#10 assign A = 4'b0110; B = 4'b0100; SELECT = 4'b0011; C_IN = 1;
+		
+		// OR
+		#10 assign A = 4'b0101; B = 4'b1001; SELECT = 4'b0100; C_IN = 0;
+		#10 assign A = 4'b0010; B = 4'b1000; SELECT = 4'b0100; C_IN = 1;
+		#10 assign A = 4'b1110; B = 4'b0010; SELECT = 4'b0100; C_IN = 0;
+		#10 assign A = 4'b0110; B = 4'b0100; SELECT = 4'b0100; C_IN = 1;
+		
+		// XOR
+		#10 assign A = 4'b0101; B = 4'b1001; SELECT = 4'b0101; C_IN = 0;
+		#10 assign A = 4'b0010; B = 4'b1000; SELECT = 4'b0101; C_IN = 1;
+		#10 assign A = 4'b1110; B = 4'b0010; SELECT = 4'b0101; C_IN = 0;
+		#10 assign A = 4'b0110; B = 4'b0100; SELECT = 4'b0101; C_IN = 1;
+		
+		// SHIFT LEFT LOGIC
+		#10 assign A = 4'b0101; B = 4'b0001; SELECT = 4'b0110; C_IN = 0;
+		#10 assign A = 4'b0010; B = 4'b0000; SELECT = 4'b0110; C_IN = 1;
+		#10 assign A = 4'b1110; B = 4'b0010; SELECT = 4'b0110; C_IN = 0;
+		#10 assign A = 4'b0110; B = 4'b0100; SELECT = 4'b0110; C_IN = 1;
+		
+		// SHIFT LEFT ARITHMETIC
+		#10 assign A = 4'b0101; B = 4'b0001; SELECT = 4'b0111; C_IN = 0;
+		#10 assign A = 4'b0010; B = 4'b0000; SELECT = 4'b0111; C_IN = 1;
+		#10 assign A = 4'b1110; B = 4'b0010; SELECT = 4'b0111; C_IN = 0;
+		#10 assign A = 4'b0110; B = 4'b0100; SELECT = 4'b0111; C_IN = 1;
+		
+		// SHIFT RIGHT LOGIC
+		#10 assign A = 4'b0101; B = 4'b0001; SELECT = 4'b1000; C_IN = 0;
+		#10 assign A = 4'b0010; B = 4'b0000; SELECT = 4'b1000; C_IN = 1;
+		#10 assign A = 4'b1110; B = 4'b0010; SELECT = 4'b1000; C_IN = 0;
+		#10 assign A = 4'b0110; B = 4'b0100; SELECT = 4'b1000; C_IN = 1;
+		
+		// SHIFT RIGHT ARITHMETIC
+		#10 assign A = 4'b0101; B = 4'b0001; SELECT = 4'b1001; C_IN = 0;
+		#10 assign A = 4'b0010; B = 4'b0000; SELECT = 4'b1001; C_IN = 1;
+		#10 assign A = 4'b1110; B = 4'b0010; SELECT = 4'b1001; C_IN = 0;
+		#10 assign A = 4'b0110; B = 4'b0100; SELECT = 4'b1001; C_IN = 1;
+		
+		// OTHER SELECTOR
+		#10 assign A = 4'b0101; B = 4'b0001; SELECT = 4'b1111; C_IN = 0;
+		#10 assign A = 4'b0010; B = 4'b0000; SELECT = 4'b1111; C_IN = 1;
+		#10 assign A = 4'b1110; B = 4'b0010; SELECT = 4'b1111; C_IN = 0;
+		#10 assign A = 4'b0110; B = 4'b0100; SELECT = 4'b1111; C_IN = 1;
+		*/
+		
+		// SUM
+		#10 assign A = 3'b101; B = 3'b001; SELECT = 4'b0000; C_IN = 0;
+		#10 assign A = 3'b010; B = 3'b000; SELECT = 4'b0000; C_IN = 1;
+		#10 assign A = 3'b110; B = 3'b010; SELECT = 4'b0000; C_IN = 0;
+		#10 assign A = 3'b110; B = 3'b100; SELECT = 4'b0000; C_IN = 1;
+		
+		// SUBTRACTION
+		#10 assign A = 3'b101; B = 3'b001; SELECT = 4'b0001; C_IN = 0;
+		#10 assign A = 3'b010; B = 3'b000; SELECT = 4'b0001; C_IN = 1;
+		#10 assign A = 3'b110; B = 3'b010; SELECT = 4'b0001; C_IN = 0;
+		#10 assign A = 3'b110; B = 3'b100; SELECT = 4'b0001; C_IN = 1;
+		
+		// NOT
+		#10 assign A = 3'b101; B = 3'b001; SELECT = 4'b0010; C_IN = 0;
+		#10 assign A = 3'b010; B = 3'b000; SELECT = 4'b0010; C_IN = 1;
+		#10 assign A = 3'b110; B = 3'b010; SELECT = 4'b0010; C_IN = 0;
+		#10 assign A = 3'b110; B = 3'b100; SELECT = 4'b0010; C_IN = 1;
+		
+		// AND
+		#10 assign A = 3'b101; B = 3'b001; SELECT = 4'b0011; C_IN = 0;
+		#10 assign A = 3'b010; B = 3'b000; SELECT = 4'b0011; C_IN = 1;
+		#10 assign A = 3'b110; B = 3'b010; SELECT = 4'b0011; C_IN = 0;
+		#10 assign A = 3'b110; B = 3'b100; SELECT = 4'b0011; C_IN = 1;
+		
+		// OR
+		#10 assign A = 3'b101; B = 3'b001; SELECT = 4'b0100; C_IN = 0;
+		#10 assign A = 3'b010; B = 3'b000; SELECT = 4'b0100; C_IN = 1;
+		#10 assign A = 3'b110; B = 3'b010; SELECT = 4'b0100; C_IN = 0;
+		#10 assign A = 3'b110; B = 3'b100; SELECT = 4'b0100; C_IN = 1;
+		
+		// XOR
+		#10 assign A = 3'b101; B = 3'b001; SELECT = 4'b0101; C_IN = 0;
+		#10 assign A = 3'b010; B = 3'b000; SELECT = 4'b0101; C_IN = 1;
+		#10 assign A = 3'b110; B = 3'b010; SELECT = 4'b0101; C_IN = 0;
+		#10 assign A = 3'b110; B = 3'b100; SELECT = 4'b0101; C_IN = 1;
+		
+		// SHIFT LEFT LOGIC
+		#10 assign A = 3'b101; B = 3'b001; SELECT = 4'b0110; C_IN = 0;
+		#10 assign A = 3'b010; B = 3'b000; SELECT = 4'b0110; C_IN = 1;
+		#10 assign A = 3'b110; B = 3'b010; SELECT = 4'b0110; C_IN = 0;
+		#10 assign A = 3'b110; B = 3'b100; SELECT = 4'b0110; C_IN = 1;
+		
+		// SHIFT LEFT ARITHMETIC
+		#10 assign A = 3'b101; B = 3'b001; SELECT = 4'b0111; C_IN = 0;
+		#10 assign A = 3'b010; B = 3'b000; SELECT = 4'b0111; C_IN = 1;
+		#10 assign A = 3'b110; B = 3'b010; SELECT = 4'b0111; C_IN = 0;
+		#10 assign A = 3'b110; B = 3'b100; SELECT = 4'b0111; C_IN = 1;
+		
+		// SHIFT RIGHT LOGIC
+		#10 assign A = 3'b101; B = 3'b001; SELECT = 4'b1000; C_IN = 0;
+		#10 assign A = 3'b010; B = 3'b000; SELECT = 4'b1000; C_IN = 1;
+		#10 assign A = 3'b110; B = 3'b010; SELECT = 4'b1000; C_IN = 0;
+		#10 assign A = 3'b110; B = 3'b100; SELECT = 4'b1000; C_IN = 1;
+		
+		// SHIFT RIGHT ARITHMETIC
+		#10 assign A = 3'b101; B = 3'b001; SELECT = 4'b1001; C_IN = 0;
+		#10 assign A = 3'b010; B = 3'b000; SELECT = 4'b1001; C_IN = 1;
+		#10 assign A = 3'b110; B = 3'b010; SELECT = 4'b1001; C_IN = 0;
+		#10 assign A = 3'b110; B = 3'b100; SELECT = 4'b1001; C_IN = 1;
+	
+		// OTHER SELECTOR
+		#10 assign A = 3'b101; B = 3'b001; SELECT = 4'b1111; C_IN = 0;
+		#10 assign A = 3'b010; B = 3'b000; SELECT = 4'b1111; C_IN = 1;
+		#10 assign A = 3'b110; B = 3'b010; SELECT = 4'b1111; C_IN = 0;
+		#10 assign A = 3'b110; B = 3'b100; SELECT = 4'b1111; C_IN = 1;
+		
+	end
+
+
+endmodule: testbench_ALU_3

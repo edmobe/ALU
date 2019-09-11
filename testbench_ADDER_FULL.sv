@@ -4,8 +4,9 @@
 	logic C_IN;
 	logic [3:0] SUM;
 	logic C_OUT;
+	logic OVERFLOW;
 	
-	ADDER_FULL #4 ADDER_FULL_TEST(A, B, C_IN, SUM, C_OUT);
+	ADDER_FULL #4 ADDER_FULL_TEST(A, B, C_IN, SUM, C_OUT, OVERFLOW);
 
 	initial
 		begin	

@@ -1,9 +1,10 @@
 module testbench_SHIFT_LEFT();
 	logic [7:0] A;
 	logic [7:0] B;
-	wire [7:0] OUT;
+	logic [7:0] OUT;
+	logic OVERFLOW;
 	
-	SHIFT_LEFT #8 SHIFT_LEFT_test(A, B, OUT);
+	SHIFT_LEFT #8 SHIFT_LEFT_test(A, B, OUT, OVERFLOW);
 
 
 	initial

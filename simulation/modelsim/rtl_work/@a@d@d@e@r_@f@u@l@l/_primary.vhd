@@ -9,7 +9,8 @@ entity ADDER_FULL is
         B               : in     vl_logic_vector;
         C_IN            : in     vl_logic;
         SUM             : out    vl_logic_vector;
-        C_OUT           : out    vl_logic
+        C_OUT           : out    vl_logic;
+        OVERFLOW        : out    vl_logic
     );
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of Nbits : constant is 1;

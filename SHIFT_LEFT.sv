@@ -1,7 +1,8 @@
 module SHIFT_LEFT #(parameter Nbits=4)(
 	input  [Nbits-1:0] A, 
 	input [Nbits-1:0] B,
-	output [Nbits-1:0] OUT);
+	output [Nbits-1:0] OUT,
+	output OVERFLOW);
 	
 	genvar i;
 	logic [Nbits*(Nbits+1)-1:0] WIRES;
@@ -22,6 +23,7 @@ module SHIFT_LEFT #(parameter Nbits=4)(
 				end	
 		end
 		assign OUT = WIRES[Nbits-1:0];
+		xor(OVERFLOW, A[Nbits-1], OUT[Nbits-1]);
 	endgenerate
 	
 endmodule: SHIFT_LEFT

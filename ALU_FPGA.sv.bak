@@ -1,0 +1,7 @@
+module ALU_FPGA(
+	input [9:0] SW,	// SWITCHES
+	output [9:0] LED	// LEDS
+);
+
+
+endmodule ALU_FPGA
