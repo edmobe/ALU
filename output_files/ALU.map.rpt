@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU
-Tue Sep 10 23:24:44 2019
+Mon Sep 16 19:01:53 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -204,7 +204,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Sep 10 23:24:44 2019       ;
+; Analysis & Synthesis Status     ; Successful - Mon Sep 16 19:01:53 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; ALU                                         ;
 ; Top-level Entity Name           ; ALU                                         ;
@@ -2075,14 +2075,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Sep 10 23:24:11 2019
+    Info: Processing started: Mon Sep 16 19:01:30 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file testbench_alu.sv
+    Info (12023): Found entity 1: testbench_ALU File: C:/intelFPGA_lite/18.1/ALU/testbench_ALU.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu_n.sv
     Info (12023): Found entity 1: ALU_N File: C:/intelFPGA_lite/18.1/ALU/ALU_N.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file testbench_alu_3.sv
-    Info (12023): Found entity 1: testbench_ALU_3 File: C:/intelFPGA_lite/18.1/ALU/testbench_ALU_3.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file is_zero.sv
     Info (12023): Found entity 1: IS_ZERO File: C:/intelFPGA_lite/18.1/ALU/IS_ZERO.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testbench_shift_right.sv
@@ -2093,8 +2093,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file shift_r
     Info (12023): Found entity 1: SHIFT_RIGHT File: C:/intelFPGA_lite/18.1/ALU/SHIFT_RIGHT.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file shift_left.sv
     Info (12023): Found entity 1: SHIFT_LEFT File: C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file subtractor.sv
-    Info (12023): Found entity 1: SUBTRACTOR File: C:/intelFPGA_lite/18.1/ALU/SUBTRACTOR.sv Line: 1
+Warning (12019): Can't analyze file -- file SUBTRACTOR.sv is missing
 Info (12021): Found 1 design units, including 1 entities, in source file testbench_gate_xor.sv
     Info (12023): Found entity 1: testebench_GATE_XOR File: C:/intelFPGA_lite/18.1/ALU/testbench_GATE_XOR.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testbench_gate_or.sv
@@ -2119,8 +2118,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file adder_f
     Info (12023): Found entity 1: ADDER_FULL File: C:/intelFPGA_lite/18.1/ALU/ADDER_FULL.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testbench_adder_full.sv
     Info (12023): Found entity 1: testebench_ADDER_FULL File: C:/intelFPGA_lite/18.1/ALU/testbench_ADDER_FULL.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file testbench_subtractor.sv
-    Info (12023): Found entity 1: testbench_SUBTRACTOR File: C:/intelFPGA_lite/18.1/ALU/testbench_SUBTRACTOR.sv Line: 1
+Warning (12019): Can't analyze file -- file testbench_SUBTRACTOR.sv is missing
 Info (12021): Found 1 design units, including 1 entities, in source file gate_nand.sv
     Info (12023): Found entity 1: GATE_NAND File: C:/intelFPGA_lite/18.1/ALU/GATE_NAND.sv Line: 1
 Warning (12090): Entity "MUX" obtained from "MUX.sv" instead of from Quartus Prime megafunction library File: C:/intelFPGA_lite/18.1/ALU/MUX.sv Line: 1
@@ -2130,8 +2128,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file testben
     Info (12023): Found entity 1: testebench_MUX File: C:/intelFPGA_lite/18.1/ALU/testbench_MUX.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testbench_is_zero.sv
     Info (12023): Found entity 1: testebench_IS_ZERO File: C:/intelFPGA_lite/18.1/ALU/testbench_IS_ZERO.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file testbench_alu_4.sv
-    Info (12023): Found entity 1: testbench_ALU_4 File: C:/intelFPGA_lite/18.1/ALU/testbench_ALU_4.sv Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at GATE_NAND.sv(8): created implicit net for "AND_OUT" File: C:/intelFPGA_lite/18.1/ALU/GATE_NAND.sv Line: 8
 Info (12127): Elaborating entity "ALU" for the top level hierarchy
 Warning (10034): Output port "LEDR[2..0]" at ALU.sv(4) has no driver File: C:/intelFPGA_lite/18.1/ALU/ALU.sv Line: 4
@@ -2164,10 +2160,10 @@ Info (21057): Implemented 52 device resources after synthesis - the final resour
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 10 output pins
     Info (21061): Implemented 32 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4845 megabytes
-    Info: Processing ended: Tue Sep 10 23:24:44 2019
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:01:14
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4848 megabytes
+    Info: Processing ended: Mon Sep 16 19:01:53 2019
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:50
 
 

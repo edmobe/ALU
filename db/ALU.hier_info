@@ -692,7 +692,7 @@ B[2] => B[2].IN3
 OUT[0] <= MUX:generate_shift_right[0].generate_muxes_sr[0].f.port3
 OUT[1] <= MUX:generate_shift_right[0].generate_muxes_sr[1].f.port3
 OUT[2] <= MUX:generate_shift_right[0].generate_muxes_sr[2].f.port3
-OVERFLOW <= comb.DB_MAX_OUTPUT_PORT_TYPE
+OVERFLOW <= <GND>
 
 
 |ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_LOGIC|MUX:generate_shift_right[2].generate_muxes_sr[2].f
@@ -976,7 +976,7 @@ B[2] => B[2].IN3
 OUT[0] <= MUX:generate_shift_right[0].generate_muxes_sr[0].f.port3
 OUT[1] <= MUX:generate_shift_right[0].generate_muxes_sr[1].f.port3
 OUT[2] <= MUX:generate_shift_right[0].generate_muxes_sr[2].f.port3
-OVERFLOW <= comb.DB_MAX_OUTPUT_PORT_TYPE
+OVERFLOW <= <GND>
 
 
 |ALU|ALU_N:ALU_FPGA|SHIFT_RIGHT:SHIFTING_RIGHT_ARITHMETIC|MUX:generate_shift_right[2].generate_muxes_sr[2].f

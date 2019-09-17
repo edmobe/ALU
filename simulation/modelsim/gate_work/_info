@@ -1,0 +1,29 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\intelFPGA_lite\18.1\ALU\simulation\modelsim
+vALU
+DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+!i10b 1
+!s100 1aV94HeYkPE@Y7FHI<OmD0
+I7BDC8kaTE2Wgl2gLNm]2j1
+Vn`_DEYBCGj^^Z7JEfKUl=1
+!s105 ALU_svo_unit
+S1
+Z1 dC:\intelFPGA_lite\18.1\ALU\simulation\modelsim
+w1568603721
+8ALU.svo
+FALU.svo
+L0 31
+Z2 OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1568603971.031000
+!s107 ALU.svo|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+.|ALU.svo|
+!s101 -O0
+o-sv -work work -O0
+!s92 -sv -work work +incdir+. -O0
+n@a@l@u

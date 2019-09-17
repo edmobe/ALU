@@ -24,7 +24,7 @@ module SHIFT_RIGHT #(parameter Nbits=4)(
 			end	
 		end
 		assign OUT = WIRES[Nbits-1:0];
-		xor(OVERFLOW, A[Nbits-1], OUT[Nbits-1]);
+		assign OVERFLOW = 1'b0;
 	endgenerate
 	
 endmodule: SHIFT_RIGHT

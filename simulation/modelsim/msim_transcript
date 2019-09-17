@@ -10,6 +10,12 @@
 # ** Warning: Copied C:\intelFPGA_lite\18.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
+# vlog -sv -work work +incdir+C:/intelFPGA_lite/18.1/ALU {C:/intelFPGA_lite/18.1/ALU/ALU_N.sv}
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module ALU_N
+# 
+# Top level modules:
+# 	ALU_N
 # vlog -sv -work work +incdir+C:/intelFPGA_lite/18.1/ALU {C:/intelFPGA_lite/18.1/ALU/IS_ZERO.sv}
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 # -- Compiling module IS_ZERO
@@ -77,58 +83,3 @@
 # Top level modules:
 # 	MUX
 # 
-vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/ALU/testbench_ALU_3.sv
-# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
-# -- Compiling module testbench_ALU_3
-# 
-# Top level modules:
-# 	testbench_ALU_3
-vsim work.testbench_ALU_3
-# vsim work.testbench_ALU_3 
-# Loading sv_std.std
-# Loading work.testbench_ALU_3
-# Loading work.ALU
-# Loading work.ADDER_FULL
-# Loading work.IS_ZERO
-# Loading work.GATE_NOT
-# Loading work.GATE_AND
-# Loading work.GATE_OR
-# Loading work.GATE_XOR
-# Loading work.SHIFT_LEFT
-# Loading work.SHIFT_RIGHT
-# Loading work.ADDER_HALF
-# Loading work.MUX
-# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/ALU.sv(42): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'C_IN'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/ADDER_FULL.sv(4).
-# 
-#         Region: /testbench_ALU_3/ALU_test/SUBTRACTION
-# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT.sv(17): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
-# 
-#         Region: /testbench_ALU_3/ALU_test/SHIFTING_LEFT/generate_shift_right[2]/generate_muxes_sl[2]/genblk1/f
-# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT.sv(17): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
-# 
-#         Region: /testbench_ALU_3/ALU_test/SHIFTING_LEFT/generate_shift_right[2]/generate_muxes_sl[1]/genblk1/f
-# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT.sv(17): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
-# 
-#         Region: /testbench_ALU_3/ALU_test/SHIFTING_LEFT/generate_shift_right[2]/generate_muxes_sl[0]/genblk1/f
-# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT.sv(17): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
-# 
-#         Region: /testbench_ALU_3/ALU_test/SHIFTING_LEFT/generate_shift_right[1]/generate_muxes_sl[1]/genblk1/f
-# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT.sv(17): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
-# 
-#         Region: /testbench_ALU_3/ALU_test/SHIFTING_LEFT/generate_shift_right[1]/generate_muxes_sl[0]/genblk1/f
-# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/SHIFT_LEFT.sv(17): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'B'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/MUX.sv(3).
-# 
-#         Region: /testbench_ALU_3/ALU_test/SHIFTING_LEFT/generate_shift_right[0]/generate_muxes_sl[0]/genblk1/f
-# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/ALU/ALU.sv(71): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'ADD_MSB'. The port definition is at: C:/intelFPGA_lite/18.1/ALU/SHIFT_RIGHT.sv(2).
-# 
-#         Region: /testbench_ALU_3/ALU_test/SHIFTING_RIGHT_LOGIC
-add wave -position end  sim:/testbench_ALU_3/A
-add wave -position end  sim:/testbench_ALU_3/B
-add wave -position end  sim:/testbench_ALU_3/SELECT
-add wave -position end  sim:/testbench_ALU_3/C_IN
-add wave -position end  sim:/testbench_ALU_3/OUT
-add wave -position end  sim:/testbench_ALU_3/FLAG_CARRY
-add wave -position end  sim:/testbench_ALU_3/FLAG_OVERFLOW
-add wave -position end  sim:/testbench_ALU_3/FLAG_NEGATIVE
-add wave -position end  sim:/testbench_ALU_3/FLAG_ZERO
-run

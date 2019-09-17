@@ -2,7 +2,7 @@ module ALU_N #(parameter Nbits=4) (
 	 input  [Nbits-1:0]  A,
 	 input  [Nbits-1:0]  B,
 	 input   [3:0] SELECT,
-    output [Nbits-1:0] OUT,
+	 output [Nbits-1:0] OUT,
 	 output FLAG_CARRY,
 	 output FLAG_OVERFLOW,
 	 output FLAG_NEGATIVE,
